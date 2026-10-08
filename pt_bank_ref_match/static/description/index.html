@@ -1,0 +1,23 @@
+<section class="oe_container"><div class="oe_row oe_spaced" style="max-width:900px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;line-height:1.55;">
+<h1>pt_bank_ref_match — Bank Statement: Match by Invoice Reference</h1>
+<p>Odoo 19 Community + OCA <code>account_reconcile_oca</code>.</p>
+<p><strong>Problem.</strong> OCA auto-matches a bank line to an invoice only when the <em>whole</em> bank
+description is contained in the invoice reference. Real UK bank descriptions carry the
+reference inside other text: <code>Jane SampleS01234</code>, <code>Alex Example SAJ/2026/0042</code>.</p>
+<p><strong>What it does.</strong> On import (and on demand) it extracts references from the bank
+description with a configurable regular expression (Accounting → Settings → Bank &amp; Cash),
+looks each one up in the <em>payment reference</em>, <em>number</em> and <em>reference</em> of open posted
+receivable/payable lines, and when exactly one line matches (same direction, same partner
+if the bank line has one) it reconciles. Smaller payment → partial payment; larger payment
+→ left for the user.</p>
+<p><strong>Manual run.</strong> Bank statement lines list → select → Actions → <em>Auto-match (rules + references)</em>.
+Already reconciled lines are skipped; unsaved matching on the selected lines is recomputed.</p>
+<p>Default pattern: <code>SAJ/\d{4}/\d{3,}|INV/\d{4}/\d{3,}|BILL/\d{4}/\d{3,}|S\d{5}</code>.</p>
+<p><strong>Fallback: payer name + amount</strong> (Settings → <em>Match bank lines by payer name and amount</em>,
+default <em>Suggest</em>). When there is no reference, the payer is identified by the bank line
+partner or by the payer name with the words in any order and without accents
+(<code>EXAMPLE ALEX</code> = <code>Alex Example</code>), and if that partner has exactly one open
+invoice/bill for exactly the same amount in the same currency it is:
+<em>Suggest</em> — pre-filled in the reconciliation screen, the user presses Validate;
+<em>Auto</em> — reconciled on import like a reference match. A single-word name is ignored.</p>
+</div></section>

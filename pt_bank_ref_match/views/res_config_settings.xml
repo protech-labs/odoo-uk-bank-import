@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <block id="bank_cash" position="inside">
+                <setting
+                    id="pt_ref_match_regex"
+                    string="Match bank lines by reference"
+                    help="Pattern of invoice / order references to look for in bank descriptions"
+                >
+                    <field name="pt_ref_match_regex" placeholder="SAJ/\d{4}/\d{3,}|S\d{5}" />
+                </setting>
+                <setting
+                    id="pt_name_match"
+                    string="Match bank lines by payer name and amount"
+                    help="No reference in the bank text: one open invoice of the payer for exactly the same amount"
+                >
+                    <field name="pt_name_match" />
+                </setting>
+            </block>
+        </field>
+    </record>
+</odoo>

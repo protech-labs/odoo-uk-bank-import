@@ -1,0 +1,8 @@
+Date,Type,Description,Amount,Balance
+30 Sep 2026,CR,Debit Card Cashback Bonus,0.40,997.55
+28 Sep 2026,CR,Interest payment,0.85,997.15
+22 Sep 2026,DD,Non-Sterling Transaction Fee,-1.20,996.30
+15 Sep 2026,BP,DEMO EMPLOYEE WAGES,-400.00,997.50
+08 Sep 2026,CR,TEST CUSTOMER INV/2026/0001,250.00,"1,397.50"
+03 Sep 2026,DD,Non-Sterling Transaction Fee,-2.50,"1,147.50"
+01 Sep 2026,CR,Received money from PAYPAL Demo transfer,150.00,"1,150.00"

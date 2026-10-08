@@ -1,0 +1,14 @@
+<section class="oe_container"><div class="oe_row oe_spaced" style="max-width:900px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;line-height:1.55;">
+<h1>pt_statement_import_paypal_csv — Import PayPal Activity CSV</h1>
+<p>PayPal → Activity → Download → <em>Completed payments</em> / all activity, CSV.
+Import it into a PayPal bank journal (currency = the PayPal balance currency) <strong>without</strong>
+choosing a sheet mapping.</p>
+<ul>
+<li>one statement line per movement at <strong>gross</strong> (so it matches the invoice amount) and a
+  separate <strong>PayPal fee</strong> line (match it with a reconciliation model to bank charges);</li>
+<li>authorisation holds (<code>Balance Impact = Memo</code>) are skipped; everything else is imported,
+  including "Refused" hold cancellations, because PayPal's own balance includes them;</li>
+<li>rows in other currencies are skipped (one journal per currency);</li>
+<li>opening/closing balance from PayPal's <code>Balance</code> column; unique ID = PayPal Transaction ID.</li>
+</ul>
+</div></section>

@@ -1,0 +1,6 @@
+Date,Time,Time zone,Name,Type,Status,Currency,Gross,Fee,Net,From Email Address,To Email Address,Transaction ID,Item Title,Invoice Number,Subject,Note,Balance,Balance Impact
+01/09/2026,09:00:00,Europe/London,,General Withdrawal,Completed,GBP,-150.00,0.00,-150.00,shop@example.com,,0DEMO0000000001,,,,,50.00,Debit
+02/09/2026,10:15:00,Europe/London,Jane Sample,Express Checkout Payment,Completed,GBP,45.00,-1.85,43.15,jane.sample@example.com,shop@example.com,0DEMO0000000002,Demo print A4,INV/2026/0002,,,93.15,Credit
+03/09/2026,11:00:00,Europe/London,,Account Hold for Open Authorisation,Completed,GBP,-30.00,0.00,-30.00,shop@example.com,,0DEMO0000000003,,,,,93.15,Memo
+05/09/2026,14:30:00,Europe/London,Alex Example,Express Checkout Payment,Completed,GBP,120.00,-4.38,115.62,alex.example@example.com,shop@example.com,0DEMO0000000004,Demo photo session,INV/2026/0003,,,208.77,Credit
+10/09/2026,16:45:00,Europe/London,Sam Placeholder,Express Checkout Payment,Completed,GBP,75.00,-2.80,72.20,sam.placeholder@example.com,shop@example.com,0DEMO0000000005,Demo frame,INV/2026/0004,,,280.97,Credit

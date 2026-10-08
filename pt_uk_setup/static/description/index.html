@@ -1,0 +1,18 @@
+<section class="oe_container"><div class="oe_row oe_spaced" style="max-width:900px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;line-height:1.55;">
+<h1>pt_uk_setup — UK small business setup (Odoo 19 Community)</h1>
+<p>Install on a database with the UK chart (<code>l10n_uk</code>). Creates, only if missing:</p>
+<ul>
+<li><strong>Bank import mappings</strong>: <em>HSBC UK — Business Internet Banking (CSV)</em>,
+  <em>Wise — Balance statement (CSV)</em>, <em>Revolut Business — account statement (CSV)</em>. PayPal is imported by <code>pt_statement_import_paypal_csv</code>
+  (no mapping needed).</li>
+<li><strong>Clearing account</strong> 120090 <em>PayPal card holds (clearing)</em>.</li>
+<li><strong>Tax</strong> <em>20% G (incl.)</em> — purchase 20 % with price included, for bank rules of
+  VAT-registered clients (bank amounts are gross). Non-VAT clients: rules without tax.</li>
+<li><strong>Generic reconciliation rules</strong>: bank/payment-provider fees → 791000; interest and
+  cashback → 490000; PayPal withdrawals and the matching bank receipts → 122001
+  Liquidity Transfer; PayPal card holds → 120090; wages and HMRC PAYE as <em>suggestions</em>.</li>
+</ul>
+<p>Not included (client-specific): bank journals, supplier rules, opening balances.
+Journal-scoped rules (PayPal/Wise) pick journals by name at install time — create the
+bank journals <strong>before</strong> installing, or edit the rule's journals afterwards.</p>
+</div></section>
