@@ -12,6 +12,17 @@ import cleanly and reconcile mostly by themselves. Built on the
 | [`pt_bank_ref_match`](pt_bank_ref_match) | Matches a bank line to an open invoice or bill by a reference found anywhere in the bank description (`INV/2026/0042`, `S01234`…); without a reference — by payer name and exact amount (suggest or automatic). |
 | [`pt_uk_setup`](pt_uk_setup) | UK starter set: import mappings for HSBC UK, Wise and Revolut Business CSV, generic reconciliation rules (bank and PayPal fees, interest and cashback, PayPal ↔ bank transfers, card holds, wages and HMRC as suggestions), VAT-inclusive purchase tax. |
 
+## Screenshots
+Invented demo data (company «Demo Ltd»).
+
+**Bank reconciliation** — fees, transfers, interest and cashback reconciled by rules, the customer payment matched to its invoice by reference, wages suggested:
+
+![Bank reconciliation](docs/bank-reconciliation.webp)
+
+**PayPal import** — gross amount and PayPal fee on separate lines, running balance in the file's order:
+
+![PayPal import](docs/paypal-import.webp)
+
 ## Requirements
 - Odoo 19.0 Community, UK chart of accounts (`l10n_uk`).
 - OCA modules: `account_statement_import_file`, `account_statement_import_sheet_file`, `account_reconcile_oca` (and their dependencies).
