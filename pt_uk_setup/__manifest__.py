@@ -4,7 +4,7 @@
     "name": "Pro Technologies — UK small business setup",
     "summary": "Bank import mappings (HSBC, Wise, Revolut Business), generic UK bank reconciliation "
     "rules (fees, PayPal holds and transfers, interest), VAT-inclusive purchase tax",
-    "version": "19.0.1.1.0",
+    "version": "19.0.1.2.0",
     "category": "Accounting",
     "license": "AGPL-3",
     "author": "Pro Technologies Limited",

@@ -39,3 +39,14 @@ AGPL-3.0-or-later, see [LICENSE](LICENSE) and [COPYRIGHT](COPYRIGHT).
 [ProTech Labs](https://www.protechlabs.co.uk) — the software side of Pro Technologies Limited, London.
 Case study: [Move to Odoo Community](https://www.protechlabs.co.uk/case-studies/move-to-odoo-community).
 Implementation and support: written brief, fixed quote.
+
+## Tests
+
+Each module has Odoo tests in `tests/` (synthetic data only). Run them on a throwaway
+database with Odoo 19 Community and the OCA dependencies on the addons path:
+
+```
+odoo-bin -d test_db -i pt_bank_ref_match,pt_statement_import_paypal_csv,pt_statement_import_sheet_order,pt_uk_setup \
+  --test-enable --test-tags /pt_bank_ref_match,/pt_statement_import_paypal_csv,/pt_statement_import_sheet_order,/pt_uk_setup \
+  --stop-after-init
+```

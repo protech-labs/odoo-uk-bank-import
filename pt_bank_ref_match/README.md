@@ -16,7 +16,9 @@ if the bank line has one) it reconciles. Smaller payment → partial payment; la
 **Manual run.** Bank statement lines list → select → Actions → *Auto-match (rules + references)*.
 Already reconciled lines are skipped; unsaved matching on the selected lines is recomputed.
 
-Default pattern: `SAJ/\d{4}/\d{3,}|INV/\d{4}/\d{3,}|BILL/\d{4}/\d{3,}|S\d{5}`.
+Default pattern: `SAJ/\d{4}/(?:\d{2}/)?\d{3,}|INV/\d{4}/(?:\d{2}/)?\d{3,}|BILL/\d{4}/(?:\d{2}/)?\d{3,}|S\d{5}` —
+yearly (`INV/2026/00001`) and monthly (`BILL/2026/10/0001`) numbers. Upgrading to 1.2.0
+replaces the old default; a pattern changed by hand is kept.
 
 **Fallback: payer name + amount** (Settings → *Match bank lines by payer name and amount*,
 default *Suggest*). When there is no reference, the payer is identified by the bank line
@@ -25,3 +27,6 @@ partner or by the payer name with the words in any order and without accents
 invoice/bill for exactly the same amount in the same currency it is:
 *Suggest* — pre-filled in the reconciliation screen, the user presses Validate;
 *Auto* — reconciled on import like a reference match. A single-word name is ignored.
+Accents are ignored without the PostgreSQL `unaccent` extension. A partner that
+`account_reconcile_oca` guessed from the payer name is used only if the payer name
+really is that partner's name (words in any order).

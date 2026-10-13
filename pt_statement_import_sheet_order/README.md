@@ -6,3 +6,7 @@ by date with a stable sort, so same-day movements stayed in reversed order and
 the opening balance was taken from the wrong row. If the first row is later
 than the last, the rows are reversed before sorting. Oldest-first files are
 untouched. Candidate for a pull request to OCA/bank-statement-import.
+
+1.1.0: a newest-first file covering a single day is detected from the balance
+column, and transactions are numbered in reverse so same-day movements show in
+the file's chronological order (running balance correct within the day).

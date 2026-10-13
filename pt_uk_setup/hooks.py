@@ -98,7 +98,7 @@ RULES = [
     ("PayPal card holds", "auto_reconcile", "match_regex",
      r"Account Hold for Open Authorisation|Reversal of General Account Hold",
      "120090", "paypal"),
-    ("Wages (suggest)", "manual", "match_regex", r"\bWAGES\b|SALARY", "222000", None),
+    ("Wages (suggest)", "manual", "match_regex", r"(^|\W)WAGES(\W|$)|SALARY", "222000", None),
     ("HMRC PAYE / NIC (suggest)", "manual", "match_regex", r"HMRC.*(PAYE|NIC|CUMBERNAULD|SHIPLEY)", "221000", None),
 ]
 

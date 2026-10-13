@@ -12,7 +12,7 @@ if the bank line has one) it reconciles. Smaller payment → partial payment; la
 → left for the user.</p>
 <p><strong>Manual run.</strong> Bank statement lines list → select → Actions → <em>Auto-match (rules + references)</em>.
 Already reconciled lines are skipped; unsaved matching on the selected lines is recomputed.</p>
-<p>Default pattern: <code>SAJ/\d{4}/\d{3,}|INV/\d{4}/\d{3,}|BILL/\d{4}/\d{3,}|S\d{5}</code>.</p>
+<p>Default pattern: <code>SAJ/\d{4}/(?:\d{2}/)?\d{3,}|INV/\d{4}/(?:\d{2}/)?\d{3,}|BILL/\d{4}/(?:\d{2}/)?\d{3,}|S\d{5}</code> (yearly and monthly numbers).</p>
 <p><strong>Fallback: payer name + amount</strong> (Settings → <em>Match bank lines by payer name and amount</em>,
 default <em>Suggest</em>). When there is no reference, the payer is identified by the bank line
 partner or by the payer name with the words in any order and without accents

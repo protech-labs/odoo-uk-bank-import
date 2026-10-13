@@ -2,7 +2,13 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from odoo import fields, models
 
-DEFAULT_REF_REGEX = r"SAJ/\d{4}/\d{3,}|INV/\d{4}/\d{3,}|BILL/\d{4}/\d{3,}|S\d{5}"
+# Odoo 19 numbers customer invoices per year (INV/2026/00001) and vendor
+# bills per month (BILL/2026/10/0001): the month part is optional.
+OLD_DEFAULT_REF_REGEX = r"SAJ/\d{4}/\d{3,}|INV/\d{4}/\d{3,}|BILL/\d{4}/\d{3,}|S\d{5}"
+DEFAULT_REF_REGEX = (
+    r"SAJ/\d{4}/(?:\d{2}/)?\d{3,}|INV/\d{4}/(?:\d{2}/)?\d{3,}"
+    r"|BILL/\d{4}/(?:\d{2}/)?\d{3,}|S\d{5}"
+)
 
 
 class ResCompany(models.Model):

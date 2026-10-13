@@ -5,7 +5,7 @@
     "summary": "Auto-match bank statement lines to open invoices/bills "
     "by a reference found anywhere in the bank description (S01234, "
     "SAJ/2026/0042, INV/2026/0042...)",
-    "version": "19.0.1.1.0",
+    "version": "19.0.1.2.0",
     "category": "Accounting",
     "license": "AGPL-3",
     "author": "Pro Technologies Limited",
